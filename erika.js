@@ -239,6 +239,9 @@ You’re never truly alone
 
 No matter the distance, or how paths bend,
 I still wish you peace, and love, my friend`,
+    `I send you light through distant skies
+Rest, renew, and softly mend,
+My heart is with you, my spirit I send ❤️`,
   ];
 
   /* ---------- ROTATOR FACTORY ---------- */
