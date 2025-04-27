@@ -11,6 +11,19 @@ body {
   height: 100dvh;
 }
 
+.title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+  font-family: "Mea Culpa", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 2.25rem;
+}
+
 .overlay {
   width: 100vw;
   height: 100vh;
