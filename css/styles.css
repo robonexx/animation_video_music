@@ -7,8 +7,8 @@
 body {
   position: absolute;
   width: 100vw;
-  min-height: 100vh;
   height: 100dvh;
+  overflow: hidden;
 }
 
 .title {
@@ -35,18 +35,24 @@ body {
 
 .poem {
   position: absolute;
-  top: 60%;
+  /* ----- band between 60 % top and 10 % bottom ------------------ */
+  bottom: 35vh; /* fixed gap from the bottom           */
+  max-height: 30vh; /* 100 - 60 - 10  = 30 % tall band     */
+  /* ----- horizontal centring & width ---------------------------- */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  width: min(80ch, 90vw); /* comfy column, never too wide        */
+  /* ----- wrapping & overflow behaviour -------------------------- */
+  white-space: pre-line; /* keep \\n but allow soft wraps       */
+  overflow: hidden; /* hide any older lines that scroll up */
+  /* ----- look & feel -------------------------------------------- */
   z-index: 5;
-  white-space: pre-wrap;
   font-family: "Cormorant", serif;
   font-size: clamp(1rem, 1.5vw, 2rem);
   line-height: 1.4;
-  color: #eaeaea;
   text-align: center;
+  color: #eaeaea;
   pointer-events: none;
-  width: 80vw;
 }
 
 .svg {
@@ -195,7 +201,7 @@ video {
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
   color: rgba(226, 226, 226, 0.337254902);
-  bottom: 10%;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   padding: 8px 12px;
@@ -216,6 +222,26 @@ video {
 #playmusic:hover {
   color: #000;
   background: rgba(226, 226, 226, 0.337254902);
+}
+
+.deep-btn {
+  position: absolute; /* tweak to taste                */
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #eaeaea;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  z-index: 6; /* above the video               */
+}
+
+.deep-btn:hover {
+  background: rgba(234, 234, 234, 0.1333333333);
 }
 
 @media (max-width: 768px) {

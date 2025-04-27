@@ -1,11 +1,17 @@
+/*
+ * erika.js  – V2.1  (cancel‑safe typewriter)
+ *  ▸ Regular quotes shuffle on load
+ *  ▸ Deep‑quote array triggered by #deepQuotesBtn click
+ *  ▸ New: any time a fresh quote starts, unfinished typing from the
+ *    previous one is automatically cancelled, so no more garbled text.
+ */
+
 (() => {
   /* ---------- CONFIG ---------- */
   const CHAR_DELAY = 45; // ms between characters
-  const FADE_DURATION = 300; // ms – keep in sync with CSS below
-  const STORAGE_KEY_ORDER = 'erika‑quote‑order';
-  const STORAGE_KEY_POINTER = 'erika‑quote‑ptr';
+  const FADE_DURATION = 300; // ms per character fade‑in
 
-  /* ---------- QUOTES ---------- */
+  /* ---------- QUOTE LISTS ---------- */
   const quotes = [
     `A showing with time, a sign of truth,
   A soul shows their intentions shining through.
@@ -33,7 +39,7 @@
 
     `Her soul recognizes mine…
   Not through words or sight,
-  but by vibration, 
+  but by vibration,
   on the same frequency,
   both near and far.`,
 
@@ -116,68 +122,108 @@
    a truth wrapped in trembling silence`,
   ];
 
-  /* ---------- UTILITIES ---------- */
-  const shuffle = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  };
+  const deepQuotes = [
+    `She walks with a knowing gaze, a shield of pride,
+  A mind convinced she’s mastered life’s tide.
+  Yet beneath the bravado, a storm brews deep,
+  A soul that aches, a pain she keeps.
+  
+  Her silence whispers louder than words,
+  A melody trapped, like caged birds.
+  She’s weathered storms, seen skies turn gray,
+  Yet fears the dawn might steal her away.
+  
+  To let love in feels like a thief's plan,
+  For trust, once shattered, scars the span.
+  So she builds her walls, brick by brick,
+  Convinced that distance will do the trick.
+  
+  Yet love persists, patient and kind,
+  Seeking the cracks where light might find
+  The courage hidden, the strength to share,
+  A heart too tender, too afraid to “care”.
+  
+  But, oh, if she could only see,
+  That love is not a lock, but the key.
+  To heal the wounds, to mend the seams,
+  To hold her fears and cradle her dreams.
+  
+  Let her know, in her quiet fight,
+  That she’s deserving of love’s soft light.
+  For the bravest hearts are those that dare,
+  To love through pain, to trust, to care.`,
+  ];
 
-  const nextIndex = () => {
-    let order = JSON.parse(localStorage.getItem(STORAGE_KEY_ORDER));
-    let pointer = parseInt(localStorage.getItem(STORAGE_KEY_POINTER), 10);
-
-    // if first run or array length changed, build a new shuffled order
-    if (!order || order.length !== quotes.length) {
-      order = shuffle([...Array(quotes.length).keys()]);
-      pointer = 0;
-    }
-
-    const idx = order[pointer];
-    pointer = (pointer + 1) % quotes.length;
-
-    localStorage.setItem(STORAGE_KEY_ORDER, JSON.stringify(order));
-    localStorage.setItem(STORAGE_KEY_POINTER, pointer.toString());
-
-    return idx;
-  };
-
-  /* ---------- TYPEWRITER ---------- */
-  const typeWriter = (text, container, cb) => {
-    const write = (i) => {
-      if (i >= text.length) {
-        if (cb) cb();
-        return;
+  /* ---------- ROTATOR FACTORY ---------- */
+  const makeRotator = (arr, key) => {
+    const ORDER_KEY = `${key}-order`;
+    const POINTER_KEY = `${key}-ptr`;
+    return () => {
+      let order = JSON.parse(localStorage.getItem(ORDER_KEY));
+      let pointer = parseInt(localStorage.getItem(POINTER_KEY), 10);
+      if (!order || order.length !== arr.length) {
+        order = [...Array(arr.length).keys()];
+        for (let i = order.length - 1; i; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [order[i], order[j]] = [order[j], order[i]];
+        }
+        pointer = 0;
       }
-      const chr = text[i];
-      if (chr === '\n') {
-        container.appendChild(document.createElement('br'));
-        write(i + 1);
-      } else {
-        const span = document.createElement('span');
-        span.textContent = chr;
-        span.style.opacity = '0';
-        span.style.transition = `opacity ${FADE_DURATION}ms ease`;
-        container.appendChild(span);
-        requestAnimationFrame(() => (span.style.opacity = '1'));
-        setTimeout(
-          () => write(i + 1),
-          chr === ' ' ? CHAR_DELAY / 2 : CHAR_DELAY
-        );
-      }
+      const idx = order[pointer];
+      pointer = (pointer + 1) % arr.length;
+      localStorage.setItem(ORDER_KEY, JSON.stringify(order));
+      localStorage.setItem(POINTER_KEY, pointer.toString());
+      return arr[idx];
     };
+  };
+  const nextQuote = makeRotator(quotes, 'erika');
+  const nextDeepQuote = makeRotator(deepQuotes, 'erika-deep');
+
+  /* ---------- CANCELLABLE TYPEWRITER ---------- */
+  let writerToken = 0; // increments every time we start a new write
+
+  const typeWriter = (text, el) => {
+    const myToken = ++writerToken; // unique id for this invocation
+    el.innerHTML = '';
+
+    const write = (i) => {
+      if (myToken !== writerToken) return; // another writer took over
+      if (i >= text.length) return; // finished
+
+      if (text[i] === '\n') {
+        el.appendChild(document.createElement('br'));
+        return write(i + 1);
+      }
+      const span = document.createElement('span');
+      span.textContent = text[i];
+      span.style.opacity = '0';
+      span.style.transition = `opacity ${FADE_DURATION}ms ease`;
+      el.appendChild(span);
+      requestAnimationFrame(() => (span.style.opacity = '1'));
+      setTimeout(
+        () => write(i + 1),
+        text[i] === ' ' ? CHAR_DELAY / 2 : CHAR_DELAY
+      );
+    };
+
     write(0);
   };
 
-  /* ---------- INIT ---------- */
+  /* ---------- BOOT ---------- */
   document.addEventListener('DOMContentLoaded', () => {
     const poemEl = document.querySelector('.poem');
     if (!poemEl) return;
-    poemEl.innerHTML = '';
-    poemEl.style.whiteSpace = 'pre-wrap'; // preserve line breaks
-    const quote = quotes[nextIndex()];
-    typeWriter(quote, poemEl);
+    poemEl.style.whiteSpace = 'pre-line'; // keep new‑lines, allow wrapping
+
+    // show a regular quote first
+    typeWriter(nextQuote(), poemEl);
+
+    // deep‑quote button
+    const deepBtn = document.getElementById('deepQuotesBtn');
+    if (deepBtn) {
+      deepBtn.addEventListener('click', () =>
+        typeWriter(nextDeepQuote(), poemEl)
+      );
+    }
   });
 })();
