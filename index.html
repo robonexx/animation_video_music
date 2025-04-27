@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,42 +8,59 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>anim ideas</title>
 </head>
+
 <body>
 
     <div class="overlay"></div>
     <div class="svg">
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg  viewBox="0 0 201.33 202.05" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-     <linearGradient id="linearGradient12950" x1="125.3" x2="-73.179" y1="112.09" y2="229.18" gradientTransform="translate(-4.9976 -36.054)" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f8f8f8" offset="0"/>
-      <stop stop-color="#7d7d7d" stop-opacity="0" offset="1"/>
-     </linearGradient>
-    </defs>
-    <ellipse id="circle1" class="circle" cx="101.38" cy="100.67" rx="99.952" ry="100.67" />
-    <ellipse id="circle2" class="circle" cx="99.952" cy="101.38" rx="99.952" ry="100.67"  />
-    <ellipse id="circle3" class="circle" cx="99.952" cy="101.38" rx="99.952" ry="100.67"  />
-    <rect id="rectangle" width="100" height="100" />
-    <path id="line1" class="line" d="m98.701 1.0913c-0.17564 35.326-0.70705 35.288-0.55934 104.5-0.98149 63.191-0.94097 63.228-0.51204 95.759" />
-    <path id="line2" class="line" d="m99.238 1.7849c3.7511 32.869 80.683 75.31-4.4858 106.02-87.976 41.542 2.1632 61.642 3.4149 93.881" />
-    <g transform="translate(-5.3546 -35.697)">
-     <path id="line3" class="line" d="m104.42 37.502c-3.7511 32.869-83.895 76.024 1.273 106.74 87.976 41.542-1.8062 61.285-3.0579 93.524" />
-    </g>
-   </svg>
-</div>
-<button id="playmusic">Play music</button>
+        <!-- Created with Inkscape (http://www.inkscape.org/) -->
+        <svg viewBox="0 0 201.33 202.05" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="linearGradient12950" x1="125.3" x2="-73.179" y1="112.09" y2="229.18"
+                    gradientTransform="translate(-4.9976 -36.054)" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#f8f8f8" offset="0" />
+                    <stop stop-color="#7d7d7d" stop-opacity="0" offset="1" />
+                </linearGradient>
+            </defs>
+            <ellipse id="circle1" class="circle" cx="101.38" cy="100.67" rx="99.952" ry="100.67" />
+            <ellipse id="circle2" class="circle" cx="99.952" cy="101.38" rx="99.952" ry="100.67" />
+            <ellipse id="circle3" class="circle" cx="99.952" cy="101.38" rx="99.952" ry="100.67" />
+            <rect id="rectangle" width="100" height="100" />
+            <path id="line1" class="line"
+                d="m98.701 1.0913c-0.17564 35.326-0.70705 35.288-0.55934 104.5-0.98149 63.191-0.94097 63.228-0.51204 95.759" />
+            <path id="line2" class="line"
+                d="m99.238 1.7849c3.7511 32.869 80.683 75.31-4.4858 106.02-87.976 41.542 2.1632 61.642 3.4149 93.881" />
+            <g transform="translate(-5.3546 -35.697)">
+                <path id="line3" class="line"
+                    d="m104.42 37.502c-3.7511 32.869-83.895 76.024 1.273 106.74 87.976 41.542-1.8062 61.285-3.0579 93.524" />
+            </g>
+        </svg>
+    </div>
 
-<audio src="./music/tune.mp3" autoplay></audio>
+    <div class="poem"></div>
+    <button id="playmusic">Play music</button>
 
-<video autoplay muted loop width="100vw" height="100vh">
-    <source src="./sky.webm" type="video/webm" >
-</video>
+    <audio src="./music/tune.mp3" autoplay></audio>
 
-<script>
-    const btn = document.querySelector('#playmusic').addEventListener('click', () => {
-        const aud = document.querySelector('audio').play();
-    })
-    
-</script>
+    <video autoplay muted loop width="100vw" height="100vh">
+        <source src="./sky.webm" type="video/webm">
+    </video>
+
+    <script>
+        const audio = document.querySelector('audio');
+        const btn = document.querySelector('#playmusic');
+
+        btn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = 'Pause music';
+            } else {
+                audio.pause();
+                btn.textContent = 'Play music';
+            }
+        });
+    </script>
+    <script src="./erika.js" defer></script>
 </body>
+
 </html>

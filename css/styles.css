@@ -19,12 +19,24 @@ body {
   z-index: -1;
 }
 
+.poem {
+  position: relative;
+  font-family: "Cormorant", serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #eaeaea;
+  text-align: center;
+  max-width: 80ch;
+  margin: 0 auto;
+  z-index: 10;
+}
+
 .svg {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   padding: 1rem;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +51,7 @@ svg {
 }
 
 #circle1 {
-  fill: #1a1a1a;
+  fill: rgb(26, 26, 26);
   transform-origin: center;
   animation-delay: 0.5s;
 }
@@ -52,7 +64,7 @@ svg {
 
 #circle3 {
   fill: transparent;
-  stroke: #a0a0a0;
+  stroke: rgb(160, 160, 160);
   stroke-width: 1;
   animation-direction: reverse;
 }
@@ -65,7 +77,7 @@ svg {
 
 #rectangle {
   opacity: 0;
-  fill: #000000a9;
+  fill: rgba(0, 0, 0, 0.662745098);
   stroke: white;
   stroke-width: 5px;
   width: 200px;
@@ -91,13 +103,13 @@ svg {
 #line2 {
   stroke-dashoffset: 265.326;
   stroke-dasharray: 265.326;
-  animation: drawline 10s ease-in-out forwards .1s infinite;
+  animation: drawline 10s ease-in-out forwards 0.1s infinite;
 }
 
 #line3 {
   stroke-dashoffset: 266.154;
   stroke-dasharray: 266.154;
-  animation: drawline 5s ease forwards .6s infinite;
+  animation: drawline 5s ease forwards 0.6s infinite;
 }
 
 @keyframes drawline {
@@ -121,7 +133,6 @@ svg {
     opacity: 1;
   }
 }
-
 @keyframes circle-rotate {
   from {
     transform-origin: center;
@@ -135,7 +146,6 @@ svg {
     opacity: 0.8;
   }
 }
-
 @keyframes rectangle-rotate {
   0% {
     transform: rotate(360deg) scale(0.7);
@@ -153,7 +163,6 @@ svg {
     opacity: 0;
   }
 }
-
 video {
   z-index: 1;
   width: 100vw;
@@ -167,12 +176,13 @@ video {
 #playmusic {
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
-  color: #e2e2e256;
+  color: rgba(226, 226, 226, 0.337254902);
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
   padding: 8px 12px;
-  font-size: 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
   border: none;
   outline: none;
   border-radius: 5px;
@@ -181,5 +191,5 @@ video {
 
 #playmusic:hover {
   color: #000;
-  background: #e2e2e256;
+  background: rgba(226, 226, 226, 0.337254902);
 }
