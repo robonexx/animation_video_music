@@ -264,6 +264,7 @@ video {
 @media (max-width: 768px) {
     video {
         transform: scale(2);
+        max-height: 100dvh;
     }
 }
 
