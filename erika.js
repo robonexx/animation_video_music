@@ -13,6 +13,22 @@
 
   /* ---------- QUOTE LISTS ---------- */
   const quotes = [
+    `Her laughter is my favorite song, and her smile, the sunrise I never knew I needed.`,
+
+    `In her eyes, I find not just love, but a home where my heart can rest and dream freely.`,
+
+    `She doesn't complete me. She expands me. She reminds me of the joy I already hold inside.`,
+
+    `With her, even silence feels like music, two souls humming the same melody.`,
+
+    `Choosing her isn't a decision. It's the most natural thing my heart has ever done.`,
+
+    `When her hand finds mine, it's not about holding tight, it's about walking forward, together.`,
+
+    `Her presence turns ordinary moments into memories I want to live in forever.`,
+
+    `She is not my reason for happiness. she is the echo of it, the shared smile of two free hearts meeting.`,
+
     `A showing with time, a sign of truth,
   A soul shows their intentions shining through.
   Overcoming fear to open up the heart,
@@ -49,20 +65,10 @@
   we are somewhere else,
   a place only we can reach.`,
 
-    `Maybe it was me,
-  my insecurity, my fear of not being enough.
-  She kept her soul hidden,
-  but I didn’t offer mine with trust and ease.`,
-
-    `I see now ...
-  she needed comfort, not pressure.
-  Safety, not intensity.`,
-
     `Now her gaze cuts through me,
   and for the first time, I feel ready,
   to open fully,
   to let her in,
-  
   to stop holding back.`,
 
     `Her eyes  shows me,
@@ -152,6 +158,88 @@
   That she’s deserving of love’s soft light.
   For the bravest hearts are those that dare,
   To love through pain, to trust, to care.`,
+
+    `Maybe it was me,
+  my insecurity, my fear of not being enough.
+  She kept her soul hidden,
+  but I didn’t offer mine with trust and ease.`,
+
+    `I see now ...
+  she needed comfort, not pressure.
+  Safety, not intensity.`,
+
+    `She walks through dreams I cannot reach,
+ A fading voice, a distant beach.
+ I called her name across the night,
+ But silence answered, soft and light.
+
+There was a time I felt her near,
+ A pull, a thread, a whispered year.
+ Now all that's left is open skies,
+ And learning how to say goodbye.
+ 
+Still, somewhere deep where echoes stay,
+ I wish her peace along her way.
+ No chains, no cries to pull her back,
+ Just love, released into the black.`,
+
+    `If roads must part, then let them part,
+With quiet hands and open heart.
+Not every storm is ours to save,
+Not every love becomes a grave.
+
+She carries oceans in her chest,
+Tides she alone must now confess.
+I cannot swim where she must go,
+Nor force the rivers not to flow.
+
+But still I send her silent prayers,
+That when she falls, love finds her there.
+And though my hands may not hold tight,
+My soul still wraps her in its light.`,
+
+    `Still I remember the look in her eyes,
+A battle fought beneath bright skies.
+
+I watched her build her careful walls,
+Stacked by the weight of a thousand falls.
+And I, outside, with hands turned bare,
+Could only whisper: I'm still there.
+
+If she must walk where I cannot tread,
+If dreams she chases leave me unsaid,
+Then I will honor her silent plea,
+And free the part she left in me.`,
+
+    `Even when silence swallowed our days,
+Even when distance blurred our ways,
+A thread unseen still pulled my soul,
+Tugging gently, making me whole.
+
+I spoke no words, you heard them still,
+I felt your ache beyond my will.
+Across the dark, through dreams unplanned,
+We met where only hearts could stand.
+
+You were never truly gone from me,
+Only hidden in tides I could not see.
+And somewhere deeper than goodbye,
+We touched, we held, we learned to fly.`,
+
+    `As we stand in the full moon’s glow,
+I think of a soul I used to know
+The warmth of the sun in her gentle smile,
+moonglow eyes that stayed awhile
+We met beneath that silver tide,
+a fleeting spark the night would hide
+
+If you happen to look up and feel something unknown…
+It's just the universe, reminding you:
+You’re never truly alone
+
+No matter the distance, or how paths bend,
+I still wish you peace, and love, my friend
+`,
   ];
 
   /* ---------- ROTATOR FACTORY ---------- */
