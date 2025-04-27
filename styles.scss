@@ -10,7 +10,8 @@ $circle-color: linear-gradient(120deg, #797979, rgba(37, 37, 37, 0.151) 20.71%);
 
 body {
     position: relative;
-    width: 100vw;
+    display: block;
+    width: 100dvw;
     height: 100dvh;
     overflow: hidden;
 }
@@ -30,8 +31,8 @@ body {
 }
 
 .overlay {
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+   /*  height: 100vh; */
     top: 0;
     left: 0;
     background: linear-gradient(217deg, #121212, rgba(255,0,0,0.1) 98.71%),
@@ -50,7 +51,7 @@ body {
   /* ----- horizontal centring & width ---------------------------- */
     left:50%;
     transform:translateX(-50%);
-    width:min(80ch,90vw);              /* comfy column, never too wide        */
+    width:min(80ch,80vw);              /* comfy column, never too wide        */
   
   /* ----- wrapping & overflow behaviour -------------------------- */
     white-space:pre-line;              /* keep \\n but allow soft wraps       */
@@ -85,7 +86,7 @@ body {
 svg {
     margin: 1rem;
     position: relative;
-    width: 300px;
+    max-width: 300px;
     
 }
 
@@ -212,7 +213,7 @@ svg {
 video {
     z-index: 1;
     width: 100vw;
-    height: 100vh;
+   /*  height: 100vh; */
     position: absolute;
     top: 0;
     left: 0;
