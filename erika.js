@@ -238,8 +238,7 @@ It's just the universe, reminding you:
 You’re never truly alone
 
 No matter the distance, or how paths bend,
-I still wish you peace, and love, my friend
-`,
+I still wish you peace, and love, my friend`,
   ];
 
   /* ---------- ROTATOR FACTORY ---------- */
