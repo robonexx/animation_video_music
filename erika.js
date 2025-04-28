@@ -15,6 +15,12 @@
   const quotes = [
     `Her laughter is my favorite song, and her smile, the sunrise I never knew I needed.`,
 
+    `This is the kind of love that grows real roots`,
+
+    `Is this the kind of love people spend lifetimes searching for`,
+
+    `I'm here anytime you want to talk more, whether it’s love, talk about daily life, you need someone to listen or just to breathe together through the emotions`,
+
     `In her eyes, I find not just love, but a home where my heart can rest and dream freely.`,
 
     `She doesn't complete me. She expands me. She reminds me of the joy I already hold inside.`,
