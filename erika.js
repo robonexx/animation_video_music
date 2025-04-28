@@ -17,6 +17,11 @@
 
     `This is the kind of love that grows real roots`,
 
+    `Her voice drifts through me,  
+a river soft and whole,  
+washing the weight from my chest,  
+calming the corners of my soul.`,
+
     `Is this the kind of love people spend lifetimes searching for`,
 
     `I'm here anytime you want to talk more, whether it’s love, talk about daily life, you need someone to listen or just to breathe together through the emotions`,
