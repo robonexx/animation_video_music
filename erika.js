@@ -13,6 +13,9 @@
 
   /* ---------- QUOTE LISTS ---------- */
   const quotes = [
+    `Your voice is the place  
+my soul remembers how to breathe.`,
+
     `Her laughter is my favorite song, and her smile, the sunrise I never knew I needed.`,
 
     `This is the kind of love that grows real roots`,
@@ -21,6 +24,11 @@
 a river soft and whole,  
 washing the weight from my chest,  
 calming the corners of my soul.`,
+
+    `We gave eachother our energy not in pieces, but whole.
+Hours that felt like fire and still in time eyes that stayed even in silence
+We didn't speak of forever, time said it louder than any vow
+With every moment We could've spent elsewhere and didn't`,
 
     `Is this the kind of love people spend lifetimes searching for`,
 
@@ -52,7 +60,7 @@ calming the corners of my soul.`,
   Din röst, sagornas stilla magi,
   Ditt leende värmer hjärtat som morgonsolens första strålar.`,
 
-    `Maybe… you needed to be sad once… 
+    `Maybe… you needed to be sad once,
   so you could know how good this actually feels now
   to know the quiet between heartbeats
   wasn’t silence,
@@ -140,6 +148,23 @@ calming the corners of my soul.`,
   ];
 
   const deepQuotes = [
+    `We are never fully ready,
+never finished,
+never perfect.
+
+We are growing, healing,
+failing, trying again,
+always becoming.
+
+Connections aren't built
+on readiness,
+but on showing up,
+messy, real,
+and willing to grow.
+
+Stop waiting to be ready.
+Be real to what you feel instead.`,
+
     `She walks with a knowing gaze, a shield of pride,
   A mind convinced she’s mastered life’s tide.
   Yet beneath the bravado, a storm brews deep,
