@@ -275,12 +275,13 @@ You’re never truly alone
 
 No matter the distance, or how paths bend,
 I still wish you peace, and love, my friend`,
+    
     `I send you light through distant skies
 Rest, renew, and softly mend,
 My heart is with you, my spirit I send ❤️`,
   ];
 
-  /* ---------- ROTATOR FACTORY ---------- */
+  /* ---------- ROTATOR ---------- */
   const makeRotator = (arr, key) => {
     const ORDER_KEY = `${key}-order`;
     const POINTER_KEY = `${key}-ptr`;
