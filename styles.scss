@@ -10,7 +10,6 @@ $circle-color: linear-gradient(120deg, #797979, rgba(37, 37, 37, 0.151) 20.71%);
 
 body {
     position: relative;
-    display: block;
     width: 100svw;
     height: 100svh;
     overflow: hidden;
@@ -268,9 +267,6 @@ video {
     }
 }
 
-html {
-    overflow: hidden;
-}
 
 body,
 .overlay,
