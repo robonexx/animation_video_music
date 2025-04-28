@@ -8,6 +8,11 @@ $dark-color: #121212;
 $light-color: #b1b1b1;
 $circle-color: linear-gradient(120deg, #797979, rgba(37, 37, 37, 0.151) 20.71%);
 
+html {
+    max-width: 100svw;
+    max-height: 100svh;
+}
+
 body {
     position: relative;
     width: 100svw;
@@ -15,7 +20,7 @@ body {
     overflow: hidden;
 }
 
-.title{
+.title {
     position: absolute;
     top: 5%;
     left: 50%;
@@ -78,6 +83,7 @@ body {
     align-items: center;
     justify-content: center;
     width: clamp(160px, 80vw, 400px);
+    max-height: 100svh;
     z-index: 20;
     
     
@@ -86,6 +92,7 @@ svg {
     margin: 1rem;
     position: relative;
     max-width: 300px;
+    max-height: 100svh;
     
 }
 
