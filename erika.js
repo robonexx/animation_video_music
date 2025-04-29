@@ -16,6 +16,28 @@
     `Your voice is the place  
 my soul remembers how to breathe.`,
 
+    `Hon bär en skönhet som inte skriker,
+men som viskar i vinden.
+En skönhet som når djupare än huden,
+ända in i mitt hjärta.`,
+
+    `Hennes skönhet fångade inte bara min blick,
+den fångade mitt hjärta,
+den stillade min själ.`,
+
+    `När jag ser på henne,
+är det inte bara ögonen som ser.
+Det är hjärtat som känner,
+själen som minns något den alltid längtat efter.`,
+
+    `She is not just beautiful to my eyes.
+She is beautiful to my soul,
+a light that calls me home without a single word.`,
+
+    `I trust her light. I trust my light.
+I don’t chase. I don’t pull away.
+I stay open, steady, free`,
+
     `Her laughter is my favorite song, and her smile, the sunrise I never knew I needed.`,
 
     `This is the kind of love that grows real roots`,
@@ -275,7 +297,7 @@ You’re never truly alone
 
 No matter the distance, or how paths bend,
 I still wish you peace, and love, my friend`,
-    
+
     `I send you light through distant skies
 Rest, renew, and softly mend,
 My heart is with you, my spirit I send ❤️`,
