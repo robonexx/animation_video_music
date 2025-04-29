@@ -1,62 +1,76 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html {
-  max-width: 100svw;
-  max-height: 100svh;
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
   position: relative;
-  width: 100svw;
-  height: 100svh;
+  overflow-y: hidden;
+  font-family: "Cormorant", serif;
+  color: #b1b1b1;
+}
+
+.video-bg {
+  position: fixed;
+  inset: 0;
   overflow: hidden;
+  z-index: -2;
+}
+.video-bg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: linear-gradient(217deg, #121212, rgba(255, 0, 0, 0.1) 98.71%), linear-gradient(127deg, #0e0b0b, rgba(0, 255, 0, 0.1) 80.71%), linear-gradient(336deg, #000, rgba(0, 0, 255, 0.1) 90.71%);
 }
 
 .title {
   position: absolute;
   top: 5%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translateX(-50%);
   z-index: 10;
   font-family: "Mea Culpa", cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: white;
   font-size: 2.25rem;
-}
-
-.overlay {
-  width: 100dvw;
-  /*  height: 100vh; */
-  top: 0;
-  left: 0;
-  background: linear-gradient(217deg, #121212, rgba(255, 0, 0, 0.1) 98.71%), linear-gradient(127deg, #0e0b0b, rgba(0, 255, 0, 0.1) 80.71%), linear-gradient(336deg, #000, rgba(0, 0, 255, 0.1) 90.71%);
-  z-index: -1;
+  font-weight: 400;
+  color: #fff;
 }
 
 .poem {
   position: absolute;
-  /* ----- band between 60 % top and 10 % bottom ------------------ */
-  bottom: 35vh; /* fixed gap from the bottom           */
-  max-height: 30vh; /* 100 - 60 - 10  = 30 % tall band     */
-  /* ----- horizontal centring & width ---------------------------- */
+  bottom: 35vh;
   left: 50%;
   transform: translateX(-50%);
-  width: min(80ch, 80vw); /* comfy column, never too wide        */
-  /* ----- wrapping & overflow behaviour -------------------------- */
-  white-space: pre-line; /* keep \\n but allow soft wraps       */
-  overflow: hidden; /* hide any older lines that scroll up */
-  /* ----- look & feel -------------------------------------------- */
+  width: min(80ch, 80vw);
+  max-height: 30vh;
+  white-space: pre-line;
+  overflow: hidden;
   z-index: 5;
-  font-family: "Cormorant", serif;
   font-size: clamp(1rem, 1.5vw, 2rem);
   line-height: 1.4;
   text-align: center;
-  color: #eaeaea;
   pointer-events: none;
 }
 
@@ -64,204 +78,139 @@ body {
   position: absolute;
   top: 30%;
   left: 50%;
-  padding: 1rem;
   transform: translate(-50%, -50%) scale(0.75);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: clamp(160px, 80vw, 400px);
-  max-height: 100svh;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
   z-index: 20;
 }
-
-svg {
-  margin: 1rem;
-  position: relative;
+.svg svg {
+  width: 100%;
   max-width: 300px;
-  max-height: 100svh;
 }
-
-#circle1 {
-  fill: rgb(26, 26, 26);
+.svg #circle1,
+.svg #circle2,
+.svg #circle3 {
   transform-origin: center;
+  opacity: 0;
+  animation: circle-rotate 5s linear 1s infinite forwards;
+}
+.svg #circle1 {
+  fill: #1a1a1a;
   animation-delay: 0.5s;
 }
-
-#circle2 {
+.svg #circle2 {
   fill: transparent;
-  stroke: white;
-  stroke-width: 1;
+  stroke: #fff;
 }
-
-#circle3 {
+.svg #circle3 {
   fill: transparent;
-  stroke: rgb(160, 160, 160);
-  stroke-width: 1;
+  stroke: #a0a0a0;
   animation-direction: reverse;
 }
-
-.circle {
-  opacity: 0;
-  transition: all 2s ease;
-  animation: circle-rotate 5s linear forwards 1s infinite;
-}
-
-#rectangle {
-  opacity: 0;
-  fill: rgba(0, 0, 0, 0.662745098);
-  stroke: white;
+.svg #rectangle {
+  fill: rgba(0, 0, 0, 0.66);
+  stroke: #fff;
   stroke-width: 5px;
   width: 200px;
   height: 200px;
+  opacity: 0;
   transform-origin: center;
-  animation: rectangle-rotate 60s linear forwards 2s infinite;
+  animation: rectangle-rotate 60s linear 2s infinite forwards;
 }
-
-.line {
+.svg .line {
   fill: none;
   stroke-width: 1;
-  opacity: 0.025;
   stroke: #b1b1b1;
-  transition: all 1s ease;
+  opacity: 0.025;
+  transition: stroke 1s ease;
 }
-
-#line1 {
+.svg .line#line1 {
   stroke-dasharray: 200.269;
-  stroke-dashoffset: 200.269;
-  animation: drawline 3s ease forwards 0.3s infinite;
+  animation: drawline 3s 0.3s infinite forwards;
 }
-
-#line2 {
-  stroke-dashoffset: 265.326;
+.svg .line#line2 {
   stroke-dasharray: 265.326;
-  animation: drawline 10s ease-in-out forwards 0.1s infinite;
+  animation: drawline 10s 0.1s infinite forwards;
+}
+.svg .line#line3 {
+  stroke-dasharray: 266.154;
+  animation: drawline 5s 0.6s infinite forwards;
 }
 
-#line3 {
-  stroke-dashoffset: 266.154;
-  stroke-dasharray: 266.154;
-  animation: drawline 5s ease forwards 0.6s infinite;
+.deep-btn, #playmusic {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.6rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(226, 226, 226, 0.34);
+  transition: background 0.3s, color 0.3s;
+}
+
+#playmusic {
+  bottom: 1rem;
+  z-index: 2;
+}
+#playmusic:hover {
+  background: rgba(226, 226, 226, 0.34);
+  color: #000;
+}
+
+.deep-btn {
+  bottom: 4rem;
+  z-index: 6;
+}
+.deep-btn:hover {
+  background: rgba(234, 234, 234, 0.13);
 }
 
 @keyframes drawline {
   0% {
-    transform: translateY(0);
     stroke-dashoffset: 0;
     stroke: #121212;
-    opacity: 1;
   }
   50% {
-    transform: translateY(0);
     stroke-dashoffset: 266.154;
-    stroke-dasharray: 266.154;
     stroke: #b1b1b1;
-    opacity: 1;
   }
   100% {
-    transform: translateY(0);
     stroke-dashoffset: 0;
     stroke: #121212;
-    opacity: 1;
   }
 }
 @keyframes circle-rotate {
   from {
-    transform-origin: center;
     transform: rotate(-360deg);
-    stroke-dasharray: 0;
   }
   to {
-    transform-origin: center;
     transform: rotate(360deg);
-    stroke-dashoffset: 400;
     opacity: 0.8;
   }
 }
 @keyframes rectangle-rotate {
   0% {
     transform: rotate(360deg) scale(0.7);
-    stroke-dashoffset: 400;
     opacity: 0;
   }
   50% {
     transform: rotate(-360deg) scale(0.3);
-    stroke-dasharray: 0;
     opacity: 0.6;
   }
   100% {
     transform: rotate(360deg) scale(0.7);
-    stroke-dashoffset: 400;
     opacity: 0;
   }
 }
-video {
-  z-index: 1;
-  max-width: 100svw;
-  max-height: 100svh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.8;
-}
-
-#playmusic {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.5);
-  color: rgba(226, 226, 226, 0.337254902);
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 8px 12px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  z-index: 2;
-}
-
-video {
-  min-height: 100dvh;
-  height: 100dvh;
-  width: 100dvw;
-}
-
-#playmusic:hover {
-  color: #000;
-  background: rgba(226, 226, 226, 0.337254902);
-}
-
-.deep-btn {
-  position: absolute; /* tweak to taste                */
-  bottom: 4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: #eaeaea;
-  border: none;
-  border-radius: 6px;
-  padding: 0.6rem 1rem;
-  font-family: inherit;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  z-index: 6; /* above the video               */
-}
-
-.deep-btn:hover {
-  background: rgba(234, 234, 234, 0.1333333333);
-}
-
 @media (max-width: 768px) {
-  video {
-    transform: scale(2);
-    max-height: 100svh;
+  .svg {
+    transform: translate(-50%, -50%) scale(0.55);
   }
-}
-body,
-.overlay,
-video {
-  max-width: 100svw;
-  height: 100svh;
-  max-height: 100svh;
-  overflow: hidden;
 }

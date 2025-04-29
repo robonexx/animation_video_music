@@ -1,315 +1,227 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+// ────────────────────────────────────────────────────────────────
+// Variables
+// ────────────────────────────────────────────────────────────────
+$color-dark:  #121212;
+$color-light: #b1b1b1;
+
+$font-display: "Mea Culpa",  cursive;
+$font-body:    "Cormorant",  serif;
+
+// ────────────────────────────────────────────────────────────────
+// House-keeping
+// ────────────────────────────────────────────────────────────────
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-$dark-color: #121212;
-$light-color: #b1b1b1;
-$circle-color: linear-gradient(120deg, #797979, rgba(37, 37, 37, 0.151) 20.71%);
-
-html {
-    max-width: 100svw;
-    max-height: 100svh;
-}
-
-body {
-    position: relative;
-    width: 100svw;
-    height: 100svh;
-    overflow: hidden;
-}
-
-.title {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%);
-    z-index: 10;
-    font-family: "Mea Culpa", cursive;
-    font-weight: 400;
-    font-style: normal;
-    color: white;
-    font-size: 2.25rem;
-        
-}
-
-.overlay {
-    width: 100dvw;
-   /*  height: 100vh; */
-    top: 0;
-    left: 0;
-    background: linear-gradient(217deg, #121212, rgba(255,0,0,0.1) 98.71%),
-    linear-gradient(127deg, #0e0b0b, rgba(0,255,0,0.1) 80.71%),
-    linear-gradient(336deg, #000, rgba(0,0,255,0.1) 90.71%);
-    z-index: -1;
-}
-
-.poem{
-    position:absolute;
-  
-  /* ----- band between 60 % top and 10 % bottom ------------------ */
-    bottom:35vh;                       /* fixed gap from the bottom           */
-    max-height:30vh;                   /* 100 - 60 - 10  = 30 % tall band     */
-  
-  /* ----- horizontal centring & width ---------------------------- */
-    left:50%;
-    transform:translateX(-50%);
-    width:min(80ch,80vw);              /* comfy column, never too wide        */
-  
-  /* ----- wrapping & overflow behaviour -------------------------- */
-    white-space:pre-line;              /* keep \\n but allow soft wraps       */
-    overflow:hidden;                   /* hide any older lines that scroll up */
-  
-  /* ----- look & feel -------------------------------------------- */
-    z-index:5;
-    font-family:"Cormorant",serif;
-    font-size:clamp(1rem,1.5vw,2rem);
-    line-height:1.4;
-    text-align:center;
-    color:#eaeaea;
-    pointer-events:none;
-  }
-  
-
-
-.svg {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    padding: 1rem;
-    transform: translate(-50%, -50%) scale(0.75);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: clamp(160px, 80vw, 400px);
-    max-height: 100svh;
-    z-index: 20;
-    
-    
-}
-svg {
-    margin: 1rem;
-    position: relative;
-    max-width: 300px;
-    max-height: 100svh;
-    
-}
-
-
-#circle1 {
-    fill: rgb(26, 26, 26);
-    transform-origin: center;
-    animation-delay: 0.5s;
-}
-#circle2 {
-    fill: transparent;
-    stroke: white;
-    stroke-width: 1;
-    
-}
-#circle3 {
-    fill: transparent;
-    stroke: rgb(160, 160, 160);
-    stroke-width: 1;
-    animation-direction: reverse;
-    
-}
-
-.circle {
-    opacity: 0;
-    transition: all 2s ease;
-    animation: circle-rotate 5s linear forwards 1s infinite;
-}
-
-#rectangle {
-    opacity: 0;
-    fill: #000000a9;
-    stroke: white;
-    stroke-width: 5px;
-    width: 200px;
-    height: 200px;
-    transform-origin: center;
-    animation: rectangle-rotate 60s linear forwards 2s infinite;
-}
-
-.line {
-    fill: none;
-    stroke-width: 1;
-    opacity: 0.025;
-    stroke: $light-color;
-    transition: all 1s ease;
-} 
-
-#line1 {
-    stroke-dasharray: 200.269;
-    stroke-dashoffset: 200.269;
-    animation: drawline 3s ease forwards 0.3s infinite;
-}
-#line2 {
-    stroke-dashoffset: 265.326;
-    stroke-dasharray: 265.326;
-    animation: drawline 10s ease-in-out forwards .1s infinite;
-
-}
-#line3 {
-    stroke-dashoffset: 266.154;
-    stroke-dasharray: 266.154;
-    animation: drawline 5s ease forwards .6s infinite;
-
-}
-
-@keyframes drawline {
-
-    0% {
-        transform: translateY(0);
-        stroke-dashoffset: 0;
-        stroke: $dark-color;
-        opacity: 1;
-    }
-
-    50% {
-        transform: translateY(0);
-        stroke-dashoffset: 266.154;
-    stroke-dasharray: 266.154;
-        stroke: $light-color;
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(0);
-        stroke-dashoffset: 0;
-        stroke: $dark-color;
-        opacity: 1;
-    }
-}
-@keyframes circle-rotate {
-    from {
-        transform-origin: center;
-        transform: rotate(-360deg);
-        stroke-dasharray: 0;
-    }
-    to {
-        transform-origin: center;
-        transform: rotate(360deg);
-        stroke-dashoffset: 400;
-        opacity: 0.8;
-    }
-}
-@keyframes rectangle-rotate {
-    0% {
-       
-        transform: rotate(360deg) scale(0.7);
-        stroke-dashoffset: 400;
-        opacity: 0;
-    }
-    50% {
-       
-        transform: rotate(-360deg) scale(0.3);
-        stroke-dasharray: 0;
-        opacity: 0.6;
-    }
-    100% {
-       
-        transform: rotate(360deg) scale(0.7);
-        stroke-dashoffset: 400;
-        opacity: 0;
-    }
-}
-
-video {
-    z-index: 1;
-    max-width: 100svw;
-     max-height: 100svh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.8;
-}
-
-#playmusic {
-    position: absolute;
-    background: rgba(0,0,0,0.5);
-    color: #e2e2e256;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 8px 12px;
-    font-size: 1rem;
-    text-transform: uppercase;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    z-index: 2;
-}
-video {
-    min-height: 100dvh;
-    height: 100dvh;
-    width: 100dvw;
-}
-
-#playmusic:hover {
-   color: #000;
-   background: #e2e2e256;
-}
-
-.deep-btn{
-    position:absolute;                /* tweak to taste                */
-    bottom:4rem; left:50%;
-    transform:translateX(-50%);
-    background:#0009; color:#eaeaea;
-    border:none; border-radius:6px;
-    padding:.6rem 1rem;
-    font-family:inherit;
-    letter-spacing:.05em;
-    cursor:pointer;
-    z-index:6;                        /* above the video               */
-  }
-  .deep-btn:hover{ background:#eaeaea22; }
-  
-
-@media (max-width: 768px) {
-    video {
-        transform: scale(2);
-        max-height: 100svh;
-    }
-}
-
 
 html,
 body {
-  overflow-x: hidden;  
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;     // belt-and-braces: never side-scroll
 }
 
+body {
+  position: relative;
+  overflow-y: hidden;     // page is a single screen
+  font-family: $font-body;
+  color: $color-light;
+}
 
+// ────────────────────────────────────────────────────────────────
+// Fixed layers (back-to-front)
+// ────────────────────────────────────────────────────────────────
+
+// 1. Video background.
+//    ▸ Wrap your <video> in <div class="video-bg"> … </div>
+.video-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -2;
+
+  video {
+    position: absolute;
+    top: 50%;  left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;    // fill without distortion
+    pointer-events: none;
+    opacity: .8;
+  }
+}
+
+// 2. Colour overlay (on top of the video)
 .overlay {
-  position: fixed;      
-  inset: 0;            
-  pointer-events: none; 
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background:
+    linear-gradient(217deg, $color-dark, rgba(255, 0, 0, .10) 98.71%),
+    linear-gradient(127deg, #0e0b0b,  rgba(0, 255, 0, .10) 80.71%),
+    linear-gradient(336deg, #000,     rgba(0, 0, 255, .10) 90.71%);
 }
 
-.video-bg{
-    position:fixed;
-    inset:0;               
-    overflow:hidden;     
-    z-index:-1;            
+// ────────────────────────────────────────────────────────────────
+// Top-level UI elements
+// ────────────────────────────────────────────────────────────────
+.title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  font-family: $font-display;
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.poem {
+  position: absolute;
+  bottom: 35vh;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(80ch, 80vw);
+  max-height: 30vh;
+
+  white-space: pre-line;
+  overflow: hidden;
+
+  z-index: 5;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  line-height: 1.4;
+  text-align: center;
+  pointer-events: none;
+}
+
+// ────────────────────────────────────────────────────────────────
+// SVG art
+// ────────────────────────────────────────────────────────────────
+.svg {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(.75);
+
+  width: clamp(160px, 80vw, 400px);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+
+  z-index: 20;
+
+  svg {
+    width: 100%;
+    max-width: 300px;
   }
 
-
-  .video-bg video{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    min-width:100%;
-    min-height:100%;
-    width:auto;
-    height:auto;
-    object-fit:cover;     
-    pointer-events:none;  
+  // ─── Shapes ───────────────────────────────────────────────────
+  #circle1,
+  #circle2,
+  #circle3 {
+    transform-origin: center;
+    opacity: 0;
+    animation: circle-rotate 5s linear 1s infinite forwards;
   }
 
-    
+  #circle1 { fill: #1a1a1a; animation-delay: .5s; }
+  #circle2 { fill: transparent; stroke: #fff;           }
+  #circle3 { fill: transparent; stroke: #a0a0a0; animation-direction: reverse; }
+
+  #rectangle {
+    fill: rgba(0, 0, 0, .66);
+    stroke: #fff;
+    stroke-width: 5px;
+    width: 200px; height: 200px;
+    opacity: 0;
+    transform-origin: center;
+    animation: rectangle-rotate 60s linear 2s infinite forwards;
+  }
+
+  .line {
+    fill: none;
+    stroke-width: 1;
+    stroke: $color-light;
+    opacity: .025;
+    transition: stroke 1s ease;
+
+    &#line1 { stroke-dasharray: 200.269; animation: drawline 3s  .3s infinite forwards; }
+    &#line2 { stroke-dasharray: 265.326; animation: drawline 10s .1s infinite forwards; }
+    &#line3 { stroke-dasharray: 266.154; animation: drawline 5s  .6s infinite forwards; }
+  }
+}
+
+// ────────────────────────────────────────────────────────────────
+// Buttons
+// ────────────────────────────────────────────────────────────────
+%btn-base { // silent placeholder = easy reuse
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: .6rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  text-transform: uppercase;
+
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  background: rgba(0, 0, 0, .5);
+  color: rgba(226, 226, 226, .34);
+  transition: background .3s, color .3s;
+}
+
+#playmusic {
+  @extend %btn-base;
+  bottom: 1rem;
+  z-index: 2;
+
+  &:hover { background: rgba(226, 226, 226, .34); color: #000; }
+}
+
+.deep-btn {
+  @extend %btn-base;
+  bottom: 4rem;
+  z-index: 6;
+
+  &:hover { background: rgba(234, 234, 234, .13); }
+}
+
+// ────────────────────────────────────────────────────────────────
+// Animations
+// ────────────────────────────────────────────────────────────────
+@keyframes drawline {
+  0%   { stroke-dashoffset: 0;         stroke: $color-dark; }
+  50%  { stroke-dashoffset: 266.154;   stroke: $color-light; }
+  100% { stroke-dashoffset: 0;         stroke: $color-dark; }
+}
+
+@keyframes circle-rotate {
+  from { transform: rotate(-360deg); }
+  to   { transform: rotate( 360deg); opacity: .8; }
+}
+
+@keyframes rectangle-rotate {
+  0%   { transform: rotate( 360deg) scale(.7); opacity: 0; }
+  50%  { transform: rotate(-360deg) scale(.3); opacity: .6; }
+  100% { transform: rotate( 360deg) scale(.7); opacity: 0; }
+}
+
+// ────────────────────────────────────────────────────────────────
+// Responsive tweak
+// ────────────────────────────────────────────────────────────────
 @media (max-width: 768px) {
-  
-  video { transform: none; }
+  .svg { transform: translate(-50%, -50%) scale(.55); }
 }
