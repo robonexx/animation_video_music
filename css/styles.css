@@ -327,3 +327,31 @@ body {
     opacity: 0;
   }
 }
+.erika {
+  position: absolute;
+  top: 15%;
+  left: 55%;
+  transform: translate(-50%, -50%) scale(0.4) rotate(10deg);
+  fill: white;
+  stroke: rgb(0, 0, 0);
+  animation: erika 60s linear forwards 2s infinite;
+}
+
+svg.erika path {
+  fill: rgba(0, 0, 0, 0.598);
+}
+
+@keyframes erika {
+  0% {
+    stroke: rgba(0, 0, 0, 0.3529411765);
+    opacity: 1;
+  }
+  50% {
+    stroke: #b1b1b1;
+    opacity: 1;
+  }
+  100% {
+    stroke: rgba(0, 0, 0, 0.2078431373);
+    opacity: 1;
+  }
+}
