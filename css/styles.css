@@ -332,7 +332,6 @@ body {
   top: 15%;
   left: 55%;
   transform: translate(-50%, -50%) scale(0.4) rotate(10deg);
-  fill: white;
   stroke: rgb(0, 0, 0);
   animation: erika 60s linear forwards 2s infinite;
 }
@@ -347,7 +346,7 @@ svg.erika path {
     opacity: 1;
   }
   50% {
-    stroke: #b1b1b1;
+    stroke: #282828;
     opacity: 1;
   }
   100% {
