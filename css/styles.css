@@ -43,7 +43,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: -1;
-  background: linear-gradient(217deg, #121212, rgba(255, 0, 0, 0.1) 98.71%), linear-gradient(127deg, #0e0b0b, rgba(0, 255, 0, 0.1) 80.71%), linear-gradient(336deg, #000, rgba(0, 0, 255, 0.1) 90.71%);
+  background: linear-gradient(217deg, #121212, rgba(21, 15, 41, 0.1) 98.71%), linear-gradient(127deg, #0e0b0b, rgba(23, 23, 38, 0.1) 80.71%), linear-gradient(336deg, #000, rgba(10, 6, 32, 0.1) 90.71%);
 }
 
 .title {
