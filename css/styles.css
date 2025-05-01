@@ -329,15 +329,15 @@ body {
 }
 .erika {
   position: absolute;
-  top: 15%;
-  left: 55%;
+  top: 30%;
+  left: 50%;
   transform: translate(-50%, -50%) scale(0.4) rotate(10deg);
-  stroke: rgb(0, 0, 0);
+  stroke: rgba(0, 0, 0, 0.576);
   animation: erika 60s linear forwards 2s infinite;
 }
 
 svg.erika path {
-  fill: rgba(0, 0, 0, 0.598);
+  fill: rgba(0, 0, 0, 0.303);
 }
 
 @keyframes erika {
@@ -346,11 +346,44 @@ svg.erika path {
     opacity: 1;
   }
   50% {
-    stroke: #282828;
+    stroke: rgba(40, 40, 40, 0.4274509804);
     opacity: 1;
   }
   100% {
     stroke: rgba(0, 0, 0, 0.2078431373);
     opacity: 1;
+  }
+}
+.underlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.587);
+}
+
+@keyframes star-blink {
+  40% {
+    -webkit-opacity: 0.3;
+    opacity: 0.3;
+  }
+  90%, 100% {
+    -webkit-opacity: 1;
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    border-radius: 999999px;
   }
 }
