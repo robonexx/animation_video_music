@@ -391,6 +391,7 @@ svg.erika path {
     border-radius: 999999px;
   }
 }
+/* MOON ANIMATION */
 .moon-wrapper {
   display: flex;
   justify-content: center;
@@ -403,7 +404,7 @@ svg.erika path {
 .moon-wrapper::before {
   content: "";
   position: absolute;
-  top: 10vh;
+  top: 20vh;
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
@@ -562,5 +563,14 @@ svg.erika path {
     border-left: 0 solid #fdfdfd;
     background-color: #101010;
     transform: rotate(-9deg);
+  }
+}
+@media (max-width: 768px) {
+  .moon-wrapper::after {
+    transform: scale(0.5);
+  }
+  .moon {
+    transform: scale(0.5);
+    margin-bottom: 23rem;
   }
 }

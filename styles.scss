@@ -405,6 +405,8 @@ svg.erika path {
   90%,100% { -webkit-opacity: 1; opacity: 1; -webkit-transform: scale(1.2); transform: scale(1.2); border-radius: 999999px;}
 }
 
+/* MOON ANIMATION */
+
 $scale: 1.5vw;
 $duration: 20s;
 $space: #000;
@@ -429,7 +431,7 @@ $sun-size: $diameter / 4;
   &::before {
     content: '';
     position: absolute;
-    top: 10vh;
+    top: 20vh;
     width: $sun-size;
     height: $sun-size;
     border-radius: 50%;
@@ -458,6 +460,8 @@ $sun-size: $diameter / 4;
     animation: var(--eclipse-animation, none);
   }
 }
+
+
 
 .moon {
   position: relative;
@@ -588,5 +592,16 @@ $sun-size: $diameter / 4;
     border-left: 0 solid $sunlight;
     background-color: $shadow;
     transform: rotate(-$rotation);
+  }
+}
+
+@media (max-width: 768px) {
+  .moon-wrapper::after {
+    transform: scale(0.5);
+  }
+
+  .moon {
+    transform: scale(0.5);
+    margin-bottom: 23rem;
   }
 }
