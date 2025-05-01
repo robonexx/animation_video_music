@@ -18,6 +18,7 @@ body {
   overflow-y: hidden;
   font-family: "Cormorant", serif;
   color: #b1b1b1;
+  background: linear-gradient(217deg, #121212, rgba(21, 15, 41, 0.1) 98.71%), linear-gradient(127deg, #0e0b0b, rgba(23, 23, 38, 0.1) 80.71%), linear-gradient(336deg, #000, rgba(10, 6, 32, 0.1) 90.71%);
 }
 
 .video-bg {
@@ -43,7 +44,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: -1;
-  background: linear-gradient(217deg, #121212, rgba(21, 15, 41, 0.1) 98.71%), linear-gradient(127deg, #0e0b0b, rgba(23, 23, 38, 0.1) 80.71%), linear-gradient(336deg, #000, rgba(10, 6, 32, 0.1) 90.71%);
+  background: linear-gradient(99.9deg, rgb(6, 7, 19) 21.2%, rgba(20, 4, 34, 0.396) 84.8%);
 }
 
 .title {
@@ -68,7 +69,7 @@ body {
   white-space: pre-line;
   overflow: hidden;
   z-index: 5;
-  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.4;
   text-align: center;
   pointer-events: none;
@@ -329,8 +330,8 @@ body {
 }
 .erika {
   position: absolute;
-  top: 30%;
-  left: 50%;
+  top: 12%;
+  left: 57.25%;
   transform: translate(-50%, -50%) scale(0.4) rotate(10deg);
   stroke: rgba(0, 0, 0, 0.576);
   animation: erika 60s linear forwards 2s infinite;
@@ -362,7 +363,7 @@ svg.erika path {
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 10;
+  z-index: 0;
   pointer-events: none;
 }
 

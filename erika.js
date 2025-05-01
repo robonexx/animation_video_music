@@ -52,7 +52,7 @@ Hours that felt like fire and still in time eyes that stayed even in silence
 We didn't speak of forever, time said it louder than any vow
 With every moment We could've spent elsewhere and didn't`,
 
-    `Is this the kind of love people spend lifetimes searching for`,
+    `Is this the kind of love people spend lifetimes searching for? Could be`,
 
     `I'm here anytime you want to talk more, whether it’s love, talk about daily life, you need someone to listen or just to breathe together through the emotions`,
 
@@ -362,7 +362,7 @@ My heart is with you, my spirit I send ❤️`,
   document.addEventListener('DOMContentLoaded', () => {
     const poemEl = document.querySelector('.poem');
     if (!poemEl) return;
-    poemEl.style.whiteSpace = 'pre-line'; // keep new‑lines, allow wrapping
+    poemEl.style.whiteSpace = 'pre-line';
 
     // show a regular quote first
     typeWriter(nextQuote(), poemEl);
