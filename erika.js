@@ -16,6 +16,20 @@
     `Your voice is the place  
 my soul remembers how to breathe.`,
 
+    `I just want to hold you, kiss you, and caress you`,
+
+    `I want to be the one who makes you smile,
+the one who makes you laugh, the one who makes you feel alive in love.`,
+
+    `I would never step on your heart,
+I would never take you for granted,
+I would never stand in your way,
+I would never try to steal you from your life,
+I would never try to change you,
+I would never try to make you feel less than you are
+
+You are love in its purest form`,
+
     `Hon bär en skönhet som inte skriker,
 men som viskar i vinden.
 En skönhet som når djupare än huden,
