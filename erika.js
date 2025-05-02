@@ -280,8 +280,8 @@ Could only whisper: I'm still there.
 
 If she must walk where I cannot tread,
 If dreams she chases leave me unsaid,
-Then I will honor her silent plea,
-And free the part she left in me.`,
+Then I will honor her silent pleas,
+It time to free the part she left in me.`,
 
     `Even when silence swallowed our days,
 Even when distance blurred our ways,
