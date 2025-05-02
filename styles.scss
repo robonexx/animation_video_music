@@ -188,7 +188,7 @@ body {
   cursor: pointer;
 
   background: rgba(0, 0, 0, .5);
-  color: rgba(226, 226, 226, .34);
+  color: rgba(226, 226, 226, 0.9);
   transition: background .3s, color .3s;
 }
 
@@ -205,7 +205,7 @@ body {
   bottom: 4rem;
   z-index: 6;
 
-  &:hover { background: rgba(234, 234, 234, .13); }
+  &:hover { background: rgba(10, 2, 28, 0.478); color: rgb(88, 83, 101); }
 }
 
 // ────────────────────────────────────────────────────────────────

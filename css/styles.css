@@ -152,7 +152,7 @@ body {
   border-radius: 6px;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.5);
-  color: rgba(226, 226, 226, 0.34);
+  color: rgba(226, 226, 226, 0.9);
   transition: background 0.3s, color 0.3s;
 }
 
@@ -170,7 +170,8 @@ body {
   z-index: 6;
 }
 .deep-btn:hover {
-  background: rgba(234, 234, 234, 0.13);
+  background: rgba(10, 2, 28, 0.478);
+  color: rgb(88, 83, 101);
 }
 
 @keyframes drawline {
