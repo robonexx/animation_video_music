@@ -70,13 +70,6 @@ With every moment We could've spent elsewhere and didn't`,
 
     `She is not my reason for happiness. she is the echo of it, the shared smile of two free hearts meeting.`,
 
-    `A showing with time, a sign of truth,
-  A soul shows their intentions shining through.
-  Overcoming fear to open up the heart,
-  Never be afraid of a bright new start.
-  When the time is right, you will truly share,
-  Until you are ready, I will be waiting right here.`,
-
     `Du kom in i mitt liv som från en dröm,
   Dina ögon har månens glans,
   Din röst, sagornas stilla magi,
@@ -170,6 +163,13 @@ With every moment We could've spent elsewhere and didn't`,
   ];
 
   const deepQuotes = [
+    `A showing with time, a sign of truth,
+    A soul shows their intentions shining through.
+    Overcoming fear to open up the heart,
+    Never be afraid of a bright new start.
+    When the time is right, you will truly share,
+    Until you are ready, I will be waiting right here.`,
+
     `We are never fully ready,
 never finished,
 never perfect.
@@ -301,6 +301,62 @@ I still wish you peace, and love, my friend`,
     `I send you light through distant skies
 Rest, renew, and softly mend,
 My heart is with you, my spirit I send ❤️`,
+
+    `She didn’t knock, didn’t ask, didn’t wait. 
+She smiled... and my guard fell like fate. 
+No mask, no plan, no grand disguise, 
+Just a spark that stole the breath from my skies. 
+
+She was A thief, yes… but gentle and true,
+She stole my heart, and somehow gave it back too.`,
+
+    `Her words said goodbye, 
+but my body flinched,
+not from heartbreak, 
+but from the lie it carried. 
+
+The energy was still warm, still tethered. 
+My gut knows it all,
+this wasn’t truth,
+this was fear, 
+wearing the mask of certainty. 
+
+And though my mind searched for reason, 
+nothing feels aligned. 
+Because when energy speaks love, 
+but the voice says no… 
+the soul hears the difference.
+I know we are not done yet.`,
+
+    `I doubted myself 
+more than I doubted her. 
+But the silence, the shift, 
+the ache in the air,
+they told me everything. 
+
+It isn’t over. 
+It never really is with her. 
+And in the end, 
+my body knows
+what my mind tries to silence, 
+I'm right I know this.`,
+
+    `Her born day on earth is next month, 
+something in me just knows, 
+This is when we will meet again.
+
+I just know. 
+She’ll come back. 
+We’ll meet. 
+And when it happens, 
+it’ll feel like it was always meant to be.
+
+I can’t explain it,
+I can’t rationalize it,
+But I can feel it.
+I can sense it.
+
+Only future will tell`,
   ];
 
   /* ---------- ROTATOR ---------- */
