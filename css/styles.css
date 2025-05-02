@@ -95,30 +95,20 @@ body {
   display: flex;
   justify-content: center;
   z-index: 100;
+  /*   #circle1,
+    #circle2,
+    #circle3 {
+      transform-origin: center;
+      opacity: 0;
+      animation: circle-rotate 5s linear 1s infinite forwards;
+    } */
+  /*  #circle1 { fill: #1a1a1a; animation-delay: .5s; }
+   #circle2 { fill: transparent; stroke: #fff;           }
+   #circle3 { fill: transparent; stroke: #a0a0a0; animation-direction: reverse; } */
 }
 .svg svg {
   width: 100%;
   max-width: 300px;
-}
-.svg #circle1,
-.svg #circle2,
-.svg #circle3 {
-  transform-origin: center;
-  opacity: 0;
-  animation: circle-rotate 5s linear 1s infinite forwards;
-}
-.svg #circle1 {
-  fill: #1a1a1a;
-  animation-delay: 0.5s;
-}
-.svg #circle2 {
-  fill: transparent;
-  stroke: #fff;
-}
-.svg #circle3 {
-  fill: transparent;
-  stroke: #a0a0a0;
-  animation-direction: reverse;
 }
 .svg #rectangle {
   fill: rgba(0, 0, 0, 0.66);
@@ -197,15 +187,11 @@ body {
     stroke: #121212;
   }
 }
-@keyframes circle-rotate {
-  from {
-    transform: rotate(-360deg);
-  }
-  to {
-    transform: rotate(360deg);
-    opacity: 0.8;
-  }
+/* @keyframes circle-rotate {
+  from { transform: rotate(-360deg); }
+  to   { transform: rotate( 360deg); opacity: .8; }
 }
+ */
 @keyframes rectangle-rotate {
   0% {
     transform: rotate(360deg) scale(0.7);
@@ -225,31 +211,30 @@ body {
     transform: translate(-50%, -50%) scale(0.55);
   }
 }
-#circle1 {
-  fill: rgb(26, 26, 26);
-  transform-origin: center;
-  animation-delay: 0.5s;
+/* #circle1 {
+    fill: rgb(255, 255, 255);
+    transform-origin: center;
+    animation-delay: 0.5s;
 }
-
 #circle2 {
-  fill: transparent;
-  stroke: white;
-  stroke-width: 1;
-}
+    fill: transparent;
+    stroke: white;
+    stroke-width: 1;
 
+}
 #circle3 {
-  fill: transparent;
-  stroke: rgb(160, 160, 160);
-  stroke-width: 1;
-  animation-direction: reverse;
+    fill: transparent;
+    stroke: rgb(160, 160, 160);
+    stroke-width: 1;
+    animation-direction: reverse;
+
 }
 
 .circle {
-  opacity: 0;
-  transition: all 2s ease;
-  animation: circle-rotate 5s linear forwards 1s infinite;
-}
-
+    opacity: 0;
+    transition: all 2s ease;
+    animation: circle-rotate 5s linear forwards 1s infinite;
+} */
 #rectangle {
   opacity: 0;
   fill: rgba(0, 0, 0, 0.662745098);
@@ -575,6 +560,10 @@ svg.erika path {
 @media (max-width: 768px) {
   .moon-wrapper::after {
     transform: scale(0.5);
+  }
+  .moon-wrapper::before {
+    transform: scale(0.8);
+    top: 21vh;
   }
   .moon {
     transform: scale(0.5);

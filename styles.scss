@@ -135,17 +135,17 @@ body {
   }
 
   // ─── Shapes ───────────────────────────────────────────────────
-  #circle1,
+/*   #circle1,
   #circle2,
   #circle3 {
     transform-origin: center;
     opacity: 0;
     animation: circle-rotate 5s linear 1s infinite forwards;
-  }
+  } */
 
-  #circle1 { fill: #1a1a1a; animation-delay: .5s; }
+ /*  #circle1 { fill: #1a1a1a; animation-delay: .5s; }
   #circle2 { fill: transparent; stroke: #fff;           }
-  #circle3 { fill: transparent; stroke: #a0a0a0; animation-direction: reverse; }
+  #circle3 { fill: transparent; stroke: #a0a0a0; animation-direction: reverse; } */
 
   #rectangle {
     fill: rgba(0, 0, 0, .66);
@@ -217,11 +217,11 @@ body {
   100% { stroke-dashoffset: 0;         stroke: $color-dark; }
 }
 
-@keyframes circle-rotate {
+/* @keyframes circle-rotate {
   from { transform: rotate(-360deg); }
   to   { transform: rotate( 360deg); opacity: .8; }
 }
-
+ */
 @keyframes rectangle-rotate {
   0%   { transform: rotate( 360deg) scale(.7); opacity: 0; }
   50%  { transform: rotate(-360deg) scale(.3); opacity: .6; }
@@ -235,8 +235,8 @@ body {
   .svg { transform: translate(-50%, -50%) scale(.55); }
 }
 
-#circle1 {
-    fill: rgb(26, 26, 26);
+/* #circle1 {
+    fill: rgb(255, 255, 255);
     transform-origin: center;
     animation-delay: 0.5s;
 }
@@ -258,7 +258,7 @@ body {
     opacity: 0;
     transition: all 2s ease;
     animation: circle-rotate 5s linear forwards 1s infinite;
-}
+} */
 
 #rectangle {
     opacity: 0;
@@ -605,6 +605,11 @@ $sun-size: $diameter / 4;
   .moon-wrapper::after {
     transform: scale(0.5);
   }
+
+  .moon-wrapper::before {
+    transform: scale(0.8);
+    top: 21vh;  
+  } 
 
   .moon {
     transform: scale(0.5);
