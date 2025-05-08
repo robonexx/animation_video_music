@@ -91,14 +91,15 @@ body {
 
 .poem-wrapper {
   position: absolute;
-  bottom: 25vh;
+  bottom: 15svh;
   left: 50%;
   transform: translate(-50%);
   z-index: 1;
 
   width: min(80ch, 80vw);
-  max-height: 40vh;
-  overflow: hidden;
+  height: 40vh;
+  z-index: 10;
+  opacity: 1;
 }
 .poem {
   position: relative;
@@ -411,209 +412,14 @@ svg.erika path {
   90%,100% { -webkit-opacity: 1; opacity: 1; -webkit-transform: scale(1.2); transform: scale(1.2); border-radius: 999999px;}
 }
 
-/* MOON ANIMATION */
-
-$scale: 1.5vw;
-$duration: 20s;
-$space: #000;
-$sun: #ffebd7;
-$sun-scatter: #d5dbff;
-$sunlight: #fdfdfd;
-$shadow: #101010;
-$rotation: 9deg;
-$diameter: 20rem;
-$sun-size: $diameter / 4;
-
-.moon-wrapper {
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  align-items: center;
-  animation: spin $duration * 0.75 ease-in-out infinite;
-  width: 100%;
-  height: 100%;
-  
-  // Sun
-  &::before {
-    content: '';
-    position: absolute;
-    top: 20vh;
-    width: $sun-size;
-    height: $sun-size;
-    border-radius: 50%;
-    background-color: $sun;
-    filter: blur(0.1rem);
-    box-shadow: 0px 0px 20px rgba(255,255,255, 0.1);
-    transform: translateX(var(--sun-position, 0%));
-    animation: var(--sun-animation, none);
-    opacity: 0.25;
-    
-    z-index: -1;
-  }
-  
-  // Eclipse
-  .moon-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 20vh;
-    width: $diameter;
-    height: $diameter;
-    border-radius: 50%;
-    background-image: linear-gradient(to bottom, $sun-scatter, $sun, $sun-scatter);
-    filter: blur(2.25rem);
-    transform: translateX(var(--sun-position, 0%)) scale(0.7);
-    z-index: -1;
-    animation: var(--eclipse-animation, none);
-  }
-}
-
-
-
-.moon {
-  position: relative;
-  width: $diameter;
-  height: $diameter;
-  border-radius: 50%;
-  filter: blur(0.02rem);
-  overflow: hidden;
-  margin-bottom: 22rem;
-  transform: scale(0.7);
-  
-  // Moon
-  &::after {
-    content: '';
-    position: absolute;
-    width: $diameter;
-    height: $diameter;
-    box-shadow:
-      inset 0px 0px 10rem #000,
-      // inset 0px 0px 10rem darken($sun-scatter, 90%),
-      inset 0px 0px 4rem #000,
-      // inset 0px 0px 4rem darken($sun, 90%),
-      inset 0px 0px 1rem #000;
-    border-radius: 50%;
-    background-image: url(https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001982/GSFC_20171208_Archive_e001982~orig.jpg);
-    background-position: center;
-    background-size: 202%;
-    background-repeat: no-repeat;
-    mix-blend-mode: multiply;
-    animation: brightness $duration ease infinite;
-    // animation-delay: -$duration / 2;
-  }
-
-  // Shadow
-  &::before {
-    content: '';
+.imageHolder img {
   position: absolute;
-  box-sizing: border-box;
-  width: $diameter;
-  height: $diameter;
-  background-color: $shadow;
-  border-radius: 50%;
-  filter: blur(0.2rem);
-  transform: translateX(var(--moon-phase, 0%));
-  animation: none;
-  }
-}
-
-@keyframes spin {
-  0% { transform: rotateZ(-$rotation); }
-  50% { transform: rotateZ($rotation); }
-  100% { transform: rotateZ(-$rotation); }
-}
-
-@keyframes brightness {
-  0% { filter: brightness(2.25); }
-  50% { filter: brightness(1); }
-  100% { filter: brightness(2.25); }
-}
-
-@keyframes sun {
-  0% { transform: rotate($rotation) translateX(140rem); }
-  50% { transform: translateX(0rem); }
-  100% { transform: rotate(-$rotation) translateX(-140rem); }
-}
-
-@keyframes eclipse {
-  0% {
-    width: 0rem;
-    height: 0rem;
-    transform: rotate($rotation);
-  }
-  45% {
-    transform: translateX(-2rem);
-  }
-  50% {
-    width: $diameter / 1.25;
-    height: $diameter / 1.25;
-  }
-  55% {
-    transform: translateX(2rem);
-  }
-  100% {
-    width: 0rem;
-    height: 0rem;
-    transform: rotate(-$rotation);
-  }
-}
-
-@keyframes rotate {
-  2.5% {
-    border-right: 0 solid $sunlight;
-    border-left: $diameter / 2 solid $shadow;
-    background-color: $shadow;
-    transform: rotate($rotation);
-  }
-  24.9999% {
-    background-color: $shadow;
-  }
-  25% {
-    border-right: $diameter / 2 solid $sunlight;
-    border-left: $diameter / 2 solid $shadow;
-    background-color: $sunlight;
-  }
-  47.5% {
-    border-right: 0 solid $sunlight;
-    border-left: 0 solid $shadow;
-    background-color: $sunlight;
-    transform: rotate(-0deg);
-  }
-  47.500001% {
-    border-right: 0 solid $shadow;
-  }
-  52.5% {
-    border-right: 0 solid $shadow;
-  }
-  74.99999% {
-    background-color: $sunlight;
-    border-left: 0 solid $sunlight;
-  }
-  75% {
-    border-right: $diameter / 2 solid $shadow;
-    border-left: $diameter / 2 solid $sunlight;
-    background-color: $shadow;
-  }
-  97.5% {
-    border-right: $diameter / 2 solid $shadow;
-    border-left: 0 solid $sunlight;
-    background-color: $shadow;
-    transform: rotate(-$rotation);
-  }
-}
-
-@media (max-width: 768px) {
-  .moon-wrapper::after {
-    transform: scale(0.5);
-  }
-
-  .moon-wrapper::before {
-    transform: scale(0.8);
-    top: 21vh;  
-  } 
-
-  .moon {
-    transform: scale(0.5);
-    margin-bottom: 23rem;
-  }
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1) rotate(10deg);
+  height: auto;
+  width: 220px;
+  object-fit: contain;
+  background: transparent;
 }
 

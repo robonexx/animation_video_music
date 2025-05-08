@@ -13,6 +13,61 @@
 
   /* ---------- QUOTE LISTS ---------- */
   const quotes = [
+    `I feel her love  
+not in grand words,  
+but in the way she asks,  
+“Are you okay?”  
+when no one else notices`,
+
+    `In the way she calls,  
+just to hear my voice.  
+In the stillness between us  
+that says,  
+“I see you, I’m here.”`,
+
+    `...I’m not afraid of falling anymore.
+Because every time I land next to you,
+it feels like I’ve come home...
+and every time,
+I fall deeper in love with you`,
+
+    `Believe the quiet thinker who says they care,  they’ve doubted every feeling, questioned every motive, and still chose you`,
+
+    `And in those small moments,  
+when she shows she cares,  
+I remember what love is supposed to feel like,
+safe,  
+present,  
+real.`,
+
+    `When i look in to her eyes, i feel the light of the moon touching my soul`,
+
+    `Her touch wasn’t a question, 
+it was an answer. 
+A quiet way of saying: 
+“I trust you.” `,
+
+    `I choose to love her now, 
+in this breath, 
+in this moment. 
+
+Not holding on too tight, 
+but holding her with presence,
+and trusting the flow 
+that brought her to me.`,
+
+    `Nothing else existed...
+just her warmth, 
+her heartbeat, 
+her love 
+wrapped around mine.`,
+
+    `Inget annat fanns Erika,
+bara din värme,
+Ditt hjärtas slag,
+Din kärlek
+omsorgsfullt svept runt mitt hjärta. 💞`,
+
     `Your voice is the place  
 my soul remembers how to breathe.`,
 
@@ -20,6 +75,12 @@ my soul remembers how to breathe.`,
 
     `I want to be the one who makes you smile,
 the one who makes you laugh, the one who makes you feel alive in love.`,
+
+    `From now on each morning,  
+my coffee carries her touch, 
+a quiet reminder  
+that I’m loved,  
+even in the smallest things.`,
 
     `I would never step on your heart,
 I would never take you for granted,
@@ -177,6 +238,51 @@ With every moment We could've spent elsewhere and didn't`,
   ];
 
   const deepQuotes = [
+    `Love didn’t arrive when I chased it, 
+or when I dreamed it into a perfect shape. 
+
+It came when I stopped searching, 
+and started seeing. 
+
+Not a flawless face, 
+but a soul with edges, 
+a voice that felt like home, 
+a presence I didn’t want to fix, only hold. 
+
+This time, love didn’t complete me. 
+It met me. 
+And chose to walk beside me.`,
+
+    `I doubted myself 
+more than I doubted her. 
+But the silence, the shift, 
+the ache in the air,
+they told me everything. 
+
+It isn’t over. 
+It never really is with her. 
+And in the end, 
+my body knows
+what my mind tries to silence: 
+I'm right I know this.`,
+
+    `Her words said goodbye, 
+but my body flinched,
+not from heartbreak, 
+but from the lie it carried. 
+
+The energy was still warm, still tethered. 
+My gut knew it all: 
+this wasn’t truth,
+this was fear, 
+wearing the mask of certainty. 
+
+And though my mind searched for reason, 
+nothing aligned. 
+Because when energy speaks love, 
+but the voice says no… 
+the soul hears the difference.`,
+
     `A showing with time, a sign of truth,
     A soul shows their intentions shining through.
     Overcoming fear to open up the heart,

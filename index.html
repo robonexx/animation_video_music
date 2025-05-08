@@ -131,8 +131,9 @@
             </g>
         </svg>
     </div>
-    <div class="moon-wrapper">
-        <div class="moon"></div>
+
+    <div class="imageHolder">
+        <img src="" alt="Moon Phase">
     </div>
     <div class="poem-wrapper">
         <div class="poem"></div>
@@ -150,20 +151,6 @@
 
     <button id="deepQuotesBtn" class="deep-btn">It’s safe, share the deeper ones</button>
 
-    <script>
-        const audio = document.querySelector('audio');
-        const btn = document.querySelector('#playmusic');
-
-        btn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-                btn.textContent = 'Pause music';
-            } else {
-                audio.pause();
-                btn.textContent = 'Play music';
-            }
-        });
-    </script>
     <script src="./erika.js"></script>
     <script src="./sky.js"></script>
     <script src="./moon.js"></script>
