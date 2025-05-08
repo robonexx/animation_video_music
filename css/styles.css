@@ -76,6 +76,7 @@ body {
 
 .poem {
   position: relative;
+  padding-top: 4rem;
   width: 100%;
   max-height: 100%;
   white-space: pre-line;
@@ -115,8 +116,8 @@ body {
   fill: rgba(0, 0, 0, 0.66);
   stroke: #fff;
   stroke-width: 5px;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   opacity: 0;
   transform-origin: center;
   animation: rectangle-rotate 60s linear 2s infinite forwards;
@@ -167,7 +168,7 @@ body {
 }
 
 .deep-btn {
-  bottom: 4rem;
+  bottom: 2rem;
   z-index: 6;
 }
 .deep-btn:hover {
@@ -213,37 +214,38 @@ body {
     transform: translate(-50%, -50%) scale(0.55);
   }
 }
-/* #circle1 {
-    fill: rgb(255, 255, 255);
-    transform-origin: center;
-    animation-delay: 0.5s;
+#circle1 {
+  fill: rgb(255, 255, 255);
+  transform-origin: center;
+  animation-delay: 0.5s;
 }
+
 #circle2 {
-    fill: transparent;
-    stroke: white;
-    stroke-width: 1;
-
+  fill: transparent;
+  stroke: white;
+  stroke-width: 1;
 }
-#circle3 {
-    fill: transparent;
-    stroke: rgb(160, 160, 160);
-    stroke-width: 1;
-    animation-direction: reverse;
 
+#circle3 {
+  fill: transparent;
+  stroke: rgb(160, 160, 160);
+  stroke-width: 1;
+  animation-direction: reverse;
 }
 
 .circle {
-    opacity: 0;
-    transition: all 2s ease;
-    animation: circle-rotate 5s linear forwards 1s infinite;
-} */
+  opacity: 0;
+  transition: all 2s ease;
+  animation: circle-rotate 5s linear forwards 1s infinite;
+}
+
 #rectangle {
   opacity: 0;
   fill: rgba(0, 0, 0, 0.662745098);
   stroke: white;
   stroke-width: 5px;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   transform-origin: center;
   animation: rectangle-rotate 60s linear forwards 2s infinite;
 }
@@ -394,4 +396,11 @@ svg.erika path {
   width: 220px;
   object-fit: contain;
   background: transparent;
+}
+
+@media (max-width: 768px) {
+  .imageHolder img {
+    width: 170px;
+    height: auto;
+  }
 }

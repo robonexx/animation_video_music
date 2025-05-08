@@ -103,6 +103,7 @@ body {
 }
 .poem {
   position: relative;
+  padding-top: 4rem;
   width: 100%;
   max-height: 100%;
 
@@ -152,7 +153,7 @@ body {
     fill: rgba(0, 0, 0, .66);
     stroke: #fff;
     stroke-width: 5px;
-    width: 200px; height: 200px;
+    width: 220px; height: 220px;
     opacity: 0;
     transform-origin: center;
     animation: rectangle-rotate 60s linear 2s infinite forwards;
@@ -203,7 +204,7 @@ body {
 
 .deep-btn {
   @extend %btn-base;
-  bottom: 4rem;
+  bottom: 2rem;
   z-index: 6;
 
   &:hover { background: rgba(10, 2, 28, 0.478); color: rgb(88, 83, 101); }
@@ -236,7 +237,7 @@ body {
   .svg { transform: translate(-50%, -50%) scale(.55); }
 }
 
-/* #circle1 {
+#circle1 {
     fill: rgb(255, 255, 255);
     transform-origin: center;
     animation-delay: 0.5s;
@@ -259,15 +260,15 @@ body {
     opacity: 0;
     transition: all 2s ease;
     animation: circle-rotate 5s linear forwards 1s infinite;
-} */
+}
 
 #rectangle {
     opacity: 0;
     fill: #000000a9;
     stroke: white;
     stroke-width: 5px;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     transform-origin: center;
     animation: rectangle-rotate 60s linear forwards 2s infinite;
 }
@@ -423,3 +424,11 @@ svg.erika path {
   background: transparent;
 }
 
+
+
+@media (max-width: 768px) {
+  .imageHolder img {
+    width: 170px;
+    height: auto;
+  }
+}
